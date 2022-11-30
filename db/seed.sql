@@ -1,10 +1,12 @@
 USE employeetracker_db;
 
+
 SET FOREIGN_KEY_CHECKS = 0;
 truncate roles;
 truncate department;
 truncate employee;
 SET FOREIGN_KEY_CHECKS = 1;
+
 
 insert INTO department(name)
 values('Sales');
@@ -54,4 +56,3 @@ values('Mark', 'Peterson', 2, 1);
 SELECT * FROM department;
 SELECT * FROM roles;
 SELECT * FROM employee;
-	

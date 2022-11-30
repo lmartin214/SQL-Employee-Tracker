@@ -1,3 +1,4 @@
+require("dotenv").config();
 const { connection } = require("./db/connection");
 const inquirer = require("inquirer");
 const cTable = require("console.table");

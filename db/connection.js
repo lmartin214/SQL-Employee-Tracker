@@ -1,16 +1,16 @@
-const mysql = require("mysql2");
-
-const connection = mysql.createConnection({
+let mysql = require("mysql");
+let connection = mysql.createConnection({
   host: "localhost",
-  // Your username
+  port: 3306,
   user: "root",
-  // Your password
-  password: "poKEmon14$",
-  database: "employeetracker_db"
+  password: "",
+  database: "employeetracker_db",
 });
 
 connection.connect(function (err) {
-  if (err) throw err;
+  if (err) {
+    console.error("error connecting: " + err.stack);
+    return;
+  }
 });
-
-module.exports = connection;
+module.exports = { connection };
