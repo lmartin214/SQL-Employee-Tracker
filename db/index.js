@@ -72,7 +72,7 @@ function init() {
   }
   function employeesView() {
     setTimeout(() => {
-      let query = "SELECT * FROM employee";
+      let query = "SELECT * FROM employees";
       connection.query(query, function (err, res) {
         if (err) throw err;
         {
@@ -182,7 +182,7 @@ function init() {
       connection.query(
         `SELECT r.id AS 'Role Id', title AS Title, CONCAT(first_name," ",last_name) AS Name, e.id AS 'Id #'
               FROM roles r
-              LEFT JOIN employee e
+              LEFT JOIN employees e
               ON e.role_id = r.id;`,
         (err, res) => {
           if (err) throw err;
@@ -224,7 +224,7 @@ function init() {
           ])
           .then(function (answer) {
             connection.query(
-              "INSERT INTO employee SET ?",
+              "INSERT INTO employees SET ?",
               {
                 first_name: answer.employeeFirst,
                 last_name: answer.employeeLast,
@@ -237,7 +237,7 @@ function init() {
                 } else {
                   let query = `SELECT r.id AS 'Role Id', title AS Title, CONCAT(first_name," ",last_name) AS Name, e.id AS 'Id #'
                     FROM roles r
-                    LEFT JOIN employee e
+                    LEFT JOIN employees e
                     ON e.role_id = r.id;`;
                   connection.query(query, function (err, res) {
                     if (err) throw err;
@@ -256,7 +256,7 @@ function init() {
         connection.query(
             `SELECT r.id AS 'Role Id', title AS Title, CONCAT(first_name," ",last_name) AS Name, e.id AS 'Id #'
             FROM roles r
-            LEFT JOIN employee e
+            LEFT JOIN employees e
             ON e.role_id = r.id;`,
             (err, res) => {
               if (err) throw err;
@@ -280,7 +280,7 @@ function init() {
               ])
               .then((answer) => {
                 connection.query(
-                  `UPDATE employee SET role_id  = ${answer.updateEmployeeRole}
+                  `UPDATE employees SET role_id  = ${answer.updateEmployeeRole}
                  WHERE id = ${answer.employeeID};`,
                   (err) => {
                     if (err) {
@@ -289,7 +289,7 @@ function init() {
                       connection.query(
                         `SELECT r.id AS 'Role Id', title AS Title, CONCAT(first_name," ",last_name) AS Name, e.id AS 'Id #'
                         FROM roles r
-                        LEFT JOIN employee e
+                        LEFT JOIN employees e
                         ON e.role_id = r.id;`,
                         (err, res) => {
                           if (err) throw err;

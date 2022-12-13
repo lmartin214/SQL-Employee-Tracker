@@ -1,4 +1,20 @@
 {
+   "scripts": {
+    "start": "node server.js",
+    "seed": "run seed"
+  },
+  "name": "sql-employee-tracker",
+  "description": "",
+  "version": "1.0.0",
+  "main": "server.js",
+  
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lmartin214/SQL-Employee-Tracker.git"
+  },
+  "author": "",
+  "license": "Apache 2.0",
   "dependencies": {
     "console.table": "^0.10.0",
     "dotenv": "^16.0.3",
@@ -6,5 +22,9 @@
     "inquirer": "^8.2.4",
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/lmartin214/SQL-Employee-Tracker/issues"
+  },
+  "homepage": "https://github.com/lmartin214/SQL-Employee-Tracker#readme"
 }

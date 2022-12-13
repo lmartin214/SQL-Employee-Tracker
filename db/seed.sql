@@ -4,7 +4,7 @@ USE employeetracker_db;
 SET FOREIGN_KEY_CHECKS = 0;
 truncate roles;
 truncate department;
-truncate employee;
+truncate employees;
 SET FOREIGN_KEY_CHECKS = 1;
 
 
@@ -48,11 +48,11 @@ values('Service Manager', 80000, 2);
 insert INTO roles(title, salary, department_id)
 values('Service Person',  40000, 2);
 
-insert INTO employee (first_name, last_name, role_id, manager_id)
+insert INTO employees (first_name, last_name, role_id, manager_id)
 values('Sam', 'Johnson', 1, NULL);
-insert INTO employee(first_name, last_name, role_id, manager_id)
+insert INTO employees(first_name, last_name, role_id, manager_id)
 values('Mark', 'Peterson', 2, 1);
 
 SELECT * FROM department;
 SELECT * FROM roles;
-SELECT * FROM employee;
+SELECT * FROM employees;
